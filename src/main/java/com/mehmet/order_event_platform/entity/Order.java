@@ -1,6 +1,5 @@
 package com.mehmet.order_event_platform.entity;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
