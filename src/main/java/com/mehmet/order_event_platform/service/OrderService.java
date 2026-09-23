@@ -1,5 +1,5 @@
 package com.mehmet.order_event_platform.service;
-
+import com.mehmet.order_event_platform.exception.ResourceNotFoundException;
 import com.mehmet.order_event_platform.dto.CreateOrderRequest;
 import com.mehmet.order_event_platform.dto.OrderResponse;
 import com.mehmet.order_event_platform.entity.Order;
@@ -40,7 +40,7 @@ public class OrderService {
     @Transactional(readOnly = true)
     public OrderResponse getOrderById(Long id) {
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found with id: " + id));
         return mapToResponse(order);
     }
 
