@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = "com.mehmet.order_event_platform.controller")
 public class GlobalExceptionHandler {
 
     // 1. Bulunamayan Kaynaklar İçin (404 Not Found)
